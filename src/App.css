@@ -1,38 +1,611 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 2vh;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top:75px ;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body{
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: rgb(0, 0, 0) !important;
+  color: rgb(255, 255, 255) !important;
+  
+
+}
+
+h1, h2, h3, h4 ,h5 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  border-style: solid;
+  
+}
+             /*NAVBAR CSS*/
+.logo{
+  width: 340px;
+  height: 60px;
+}
+
+p.sucess {
+  color: green;
+}
+
+p.danger {
+  color: red;
+}
+
+nav.navbar{
+  padding: 10px 0;
+  position: grid;
+  width: auto;
+
+  top: 0vh;
+  z-index: 9999;
+  transition: 0.32 ease-in-out;
+}
+.me-auto{
+  margin: auto;
+}
+nav.navbar.scrolled {
+  padding: 0px 0;
+  background-color: #fa030385;
+
+  
+  
+}
+
+nav.navbar a.navbar-brand {
+  width: 20%;
+  height: 10vh;
+  display: grid;  
+}
+.navbar-link{
+  color: azure !important;
+
+}
+.nav-link.active{
+  color: red !important
+}
+
+nav.navbar a.navbar.mav .nav-link.navbar-link {
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  padding: 0 25px;
+  font-size: 18px;
+  opacity: 0.75;
+ 
+
+  
+}
+
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link:active {
+  opacity: 1;
+  color: #ffffff94 !important;
+}
+
+
+span.navbar-text{
+  display: flex;
+  align-items: center;
+  color: #fa0303;
+  
+}
+
+.social-icon{
+  display: inline-block;
+  margin-left: auto;
+}
+
+.social-icon a {
+  width: 42px;
+  height: 42px;
+  background-color: #ffffff;
+  display: inline-flex;
+  border-radius: 50%;
+  justify-content: center;
+  line-height: 1;
+  border: 3px solid green;
+}
+
+.social-icon a::before {
+  margin-top: 10vh;
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: rgba(139, 121, 121, 0.329);
+  border-radius: 50%;
+  transform: scale(0);
+  margin-top: -0vh;
+  transition: 0.3s ease-in-out;
+}
+
+.social-icon a:hover::before {
+  transform: scale(1);
+}
+
+.social-icon a img {
+  width: 100%;
+  border-radius: 50%;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+.social-icon a:hover img {
+  filter: brightness(50%) saturate(0%) invert(0%) ;
+
+}
+.vvd{
+  background-color: rgb(36, 81, 167);
+  color: azure;
+  border-radius: 5%;
+  margin: 20px 2px 2px 2px;
+  padding: 2px 4px 2px 4px;
+
+}
+.vvd:hover{
+  background-color: rgb(60, 97, 165);
+}
+
+
+.navbar-text button {
+  font-weight: 700;
+  color:azure;
+  border: 1px solid rgb(248, 255, 255);
+  padding: 18px 34px;
+  font-size: 18px;
+  margin-left: 18px;
+  position: relative;
+  background-color: transparent;
+  transition: 0.3 ease-in-out;
+  
+}
+.navbar-text button span {
+  z-index: 1;
+}
+.navbar-text button ::before{
+  content: "";
+  width: 0%;
+  height: 100%;
+  position:absolute;
+  background-color: aliceblue;
+  left: 0;
+  top:0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+  
+}
+
+.navbar-text button:hover{
+  color: #fa0303;
+  
+}
+.navbar-toggler{
+  margin-top: 5vh;
+}
+
+
+
+.navbar-text button:hover::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  
+}
+
+
+.nav-navbar .navbar-toggler:active,
+nav.navbar .navbar-toggler:focus{
+outline: none;
+box-shadow: none;
+}
+nav.navbar .navbar-toggler-icon{
+  
+  width: 24px;
+  height: 17px;
+  background-image: none;
+  position: relative;
+  border-bottom: 2px solid rgba(241, 37, 37, 0.568);
+  transition: all 300ms linear;
+  top: -1px;
+}
+
+nav.navbar .navbar-toggler-icon:focus {
+  border-bottom: 2px solid rgba(161, 20, 20, 0.719);
+}
+nav.navbar .navbar-toggler-icon::after,
+nav.navbar .navbar-toggler-icon::before{
+  width: 24px;
+  position:absolute;
+  height: 2px;
+  background-color: rgba(241, 37, 37, 0.568);
+  top: 0;
+  left: 0;
+  content: "";
+  z-index: 2;
+  transition: all 300ms linear;
+}
+nav.navbar .navbar-toggler-icon::after{
+  top: 8px;
+  
+}
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after{
+  transform: rotate(45deg);
+  background-color: rgba(255, 9, 9, 0.945);
+  height: 20px;
+  
+}
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  border-color: transparent;
+}
+
+ /*BANNER CSS*/
+
+.banner {
+  margin-top: 0;
+  background-color: #fa030385;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.banner .tagline {
+  font-size: 700;
+  letter-spacing: 0.8px;
+  padding: 8px 10px;
+  background: linear-gradient(90.21deg, rgba(161, 20, 20, 0.719) -10.91%, rgba(0, 0, 0, 0.74) );
+  border: 1px solid azure;
+  font-size: 20px;
+  margin-bottom: 16px;
+  margin-top: 5vh;
+  display: inline-block;
+}
+
+.banner h1{
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+  border-style: none;
+}
+
+.banner p{
+  color: azure;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+}
+
+.banner button{
+  background-color: rgb(36, 81, 167);
+  color: azure;
+  font-weight: 700;
+  border-radius: 10%;
+  letter-spacing: 2px;
+  align-items: center;
+  margin-top: 60px;
+  font-size: 23px;
+  margin-bottom: 5vh;
+}
+
+.banner button svg {
+  font-size: 25px;
+  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+  line-height: 1;
+}
+
+.banner button:hover svg{
+  margin-left: 25px;
+}
+.banner img {
+  animation: updown 20s linear infinite;
+  height: 15vh;
+  border: 2px solid #fa030385;
+}
+@keyframes updown {
+  0%{
+    transform: translateY(-20px);
+  }
+  50%{
+    transform: translateY(2px);
+  }
+  100%{
+    transform: translateY(-20px);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #fa030385;
+}
+
+/*APP CSS*/
+.App {
+  text-align: center;
+  
+}
+
+/*Projects css*/
+
+.projects {
+  padding: 0;
+  position: relative;
+}
+
+.projects-bx{
+  background-color: rgba(128, 128, 128, 0.192);
+  border-radius: 64px;
+  padding: 60px 50px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+
+.projects h2{
+  font-size: 45px;
+  font-weight: 700;
+  border: none;
+  animation: updown 10s infinite;
+  margin-top: 4vh;
+}
+.projects h5{
+  font-size: 25px;
+  font-weight: 700;
+  border: none;
+  animation: updown 10s infinite;
+  margin-top: 4vh;
+}
+
+.projects p {
+  color: azure;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 75px 0;
+} 
+
+.projects-slider{
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+.item img{
+  height: 15vh;
+  width: 20vh;
+  animation: updown 10s infinite;
+}
+.projects-slider .item img{
+  width: 30%;
+  margin: 0 auto 15px auto;
+}
+
+/* Miner InfoSection/Cards  */
+
+.miner{
+  padding: 80px 0;
+  position: relative;
+  background-color: black;
+}
+
+.miner h2{
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.miner p {
+  padding-top: 1vh;
+  color: azure;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px auto 30px auto;
+  text-align: center;
+  width: 56%;
+}
+.miner .nav.nav-pills {
+  width: 80.333%;
+  margin: 0 auto auto auto;
+  border-radius: 50px;
+  background-color: rgba(136, 136, 136, 0.096);
+  overflow: hidden;
+}
+.miner .nav.nav-pills .nav-item {
+  width: 33.3333%;
+}
+.miner .nav.nav-pills .nav-link {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 17px 0;
+  color: azure;
+  width: 100%;
+  font-size: 17px;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  z-index: 0;
+}
+.miner .nav.nav-pills .nav-link::before{
+  content: "";
+  position:absolute;
+  width: 0;
+  height: 100%;
+  background-color: linear-gradient(90.21deg, azure -5.91%, rgba(71, 5, 252, 0.808) 111.58%);
+  top: 0;
+  left: 1;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+.miner .nav.nav-pills .nav-link.active::before{
+  width: 100% !important;
+}
+.miner .nav.nav-pills .nav-link.active{
+  border: 1px solid azure !important; 
+}
+.nav-link#miner-tabs-tab-first{
+  border: 1px solid rgb(13, 35, 236);
+  border-radius: 55px 0px 0px 55px;
+}
+.nav-link#miner-tabs-tab-second {
+  border: 1px solid rgb(13, 35, 236);
+  border-bottom: 1px solid rgb(13, 35, 236);
+}
+.nav-link#miner-tabs-tab-third {
+  border: 1px solid rgb(13, 35, 236);
+  border-radius: 0 55px 55px 0;
+}
+.miner-imgbx{
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 24px;
+
+}
+.miner-imgbx::before{
+  content: "";
+  background-color:linear-gradient(90.21deg, red -5.91%, rgba(71, 5, 252, 0.808) 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transition: 0.4s ease-in-out;
+}
+.miner-imgbx:hover::before{
+  height: 100%;
+}
+.miner-txtx {
+  position:absolute;
+  text-align: center;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  width: 100%;
+}
+.miner-imgbx:hover .miner-txtx{
+  top: 50%;
+  opacity: 1;
+  background-color: #57555534;
+  width: 50%;
+  height: 70%;
+  border-radius: 10%;
+}
+
+.miner-txtx h4{
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.1em;
+  border: none;
+  
+}
+.miner-txtx span {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 15px;
+  
+}
+
+
+/*MINER GAME CSS*/
+/* MinerStake.css */
+.minerGameSection{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .minerStake-table {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+
+  }
+  
+  .minerStake-firstrow,
+  .minerStake-secondrow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.minerStake-table {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.minerStake-firstrow {
+  padding: 1rem;
+  background-color: rgb(65, 81, 224);
+  border-top-right-radius:10% ;
+  border-top-left-radius:10% ;
+
+}
+
+.minerStake-secondrow {
+  padding: 1rem;
+  border: 1px solid gray;
+  border-bottom-right-radius:5% ;
+  border-bottom-left-radius:5% ;
+}
+
+label {
+  margin-right: 1rem;
+}
+
+input[type='number'] {
+  width: 100px;
+  height: 3vh;
+  padding: 0.5rem;
+}
+
+.MinerStakeButtons {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  align-items: center;
+  margin-top: 3vh;
 
-.App-link {
-  color: #61dafb;
 }
+ .flecha{
+  height: 3vh;
+  width: 3vh;
+  display: grid;
+  border:solid 4px rgb(16, 212, 16);
+  border-radius: 50%;
+  position: relative;
+  rotate: 180deg;
+  background-image: url('./assets/iconos/ArrowIconDown.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: local;
+  background-size: 70%;
+  background-color: rgb(255, 255, 255);
+  
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+  color: rgba(255, 255, 255, 0.219);
+}
+button[type='submit'] {
+  margin-left:2vh;
 }
