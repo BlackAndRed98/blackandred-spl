@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/BlackAndRed98/blackandred-spl/static/css/main.5a04eeed.css",
+    "main.js": "/BlackAndRed98/blackandred-spl/static/js/main.a32905be.js",
+    "static/media/rulesimg.png": "/BlackAndRed98/blackandred-spl/static/media/rulesimg.b3255e32db1f21407517.png",
+    "static/media/supportimg.png": "/BlackAndRed98/blackandred-spl/static/media/supportimg.d15c5dba9ef3b1cb7c82.png",
+    "static/media/contractimg.png": "/BlackAndRed98/blackandred-spl/static/media/contractimg.5b053975861d8aff4b04.png",
+    "static/media/bonusimg.png": "/BlackAndRed98/blackandred-spl/static/media/bonusimg.fd9e9419251a904be131.png",
+    "static/media/whitepaperimg.png": "/BlackAndRed98/blackandred-spl/static/media/whitepaperimg.cbc9b02420107a04df34.png",
+    "static/media/info.png": "/BlackAndRed98/blackandred-spl/static/media/info.e71358762f6b2d508440.png",
+    "static/media/revicons.eot": "/BlackAndRed98/blackandred-spl/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/BlackAndRed98/blackandred-spl/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/BlackAndRed98/blackandred-spl/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/BlackAndRed98/blackandred-spl/index.html",
+    "main.5a04eeed.css.map": "/BlackAndRed98/blackandred-spl/static/css/main.5a04eeed.css.map",
+    "main.a32905be.js.map": "/BlackAndRed98/blackandred-spl/static/js/main.a32905be.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5a04eeed.css",
+    "static/js/main.a32905be.js"
+  ]
+}
