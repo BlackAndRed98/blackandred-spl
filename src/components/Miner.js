@@ -52,7 +52,7 @@ export const Miner = () => {
     
 
     return (
-    <section className="miner" id="Miner">
+    <section className="miner" id="miner">
         <Container>
             <Row>
                 <Col>
